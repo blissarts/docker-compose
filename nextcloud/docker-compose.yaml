@@ -1,0 +1,18 @@
+version: "2.1"
+services:
+  nextcloud:
+    image: linuxserver/nextcloud:version-20.0.1
+    container_name: nextcloud
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - UMASK=022
+    volumes:
+      - /home/johannes/docker/nextcloud/config:/config
+      - /home/johannes/docker/nextcloud/data:/data
+      - /media/data:/storage:rw
+    ports:
+      - 443:443
+      - 8000:8000
+    restart: unless-stopped
