@@ -6,5 +6,6 @@ services:
          - "5800:5800"
       volumes:
          - "/home/johannes/docker/jdownloader/config:/config:rw"
-         - "/home/johannes/Downloads:/output:rw"
+           #         - "/home/johannes/Downloads:/output:rw"
+         - "/media/data/downloads:/output:rw"
       restart: unless-stopped

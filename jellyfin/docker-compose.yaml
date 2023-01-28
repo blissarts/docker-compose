@@ -1,7 +1,7 @@
 version: "2.1"
 services:
   jellyfin:
-    image: linuxserver/jellyfin
+    image: linuxserver/jellyfin:latest
     container_name: jellyfin
     environment:
       - PUID=1000
@@ -10,15 +10,17 @@ services:
  #     - UMASK_SET=<022> #optional
     volumes:
       - /home/johannes/docker/jellyfin/config:/config
-#      - /home/johannes/test/tv_shows:/data/tvshows
-#      - /home/johannes/test/movies:/data/movies
       - /media/data/Musik:/data/music
+      - /media/data/Kinderlieder:/data/Kinderlieder
+      - /media/data/movies/:/data/movies
+      - /media/data/series/:/data/series
+      - /media/data/Dokus/sonstige_geschichte/100_jahre:/data/doku
 #      - /opt/vc/lib:/opt/vc/lib #optional
     ports:
       - 8096:8096
   #    - 8920:8920 #optional
-#      - 7359:7359/udp #optional
-#      - 1900:1900/udp #optional
+      - 7359:7359/udp #optional
+      - 1900:1900/udp #optional
 #devices:
  #     - /dev/dri:/dev/dri #optional
  #     - /dev/vcsm:/dev/vcsm #optional

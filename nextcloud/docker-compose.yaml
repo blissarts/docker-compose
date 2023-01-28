@@ -1,7 +1,7 @@
 version: "2.1"
 services:
   nextcloud:
-    image: linuxserver/nextcloud:version-20.0.1
+    image: lscr.io/linuxserver/nextcloud:24.0.6
     container_name: nextcloud
     environment:
       - PUID=1000
@@ -12,6 +12,7 @@ services:
       - /home/johannes/docker/nextcloud/config:/config
       - /home/johannes/docker/nextcloud/data:/data
       - /media/data:/storage:rw
+      - /media:/media:rw
     ports:
       - 443:443
       - 8000:8000

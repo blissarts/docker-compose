@@ -7,7 +7,7 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - /home/johannes:/data/home
+      - /media:/data
       - /home/johannes/docker/filebrowser/config:/config
     environment:
       - FB_BASEURL=/filebrowser
